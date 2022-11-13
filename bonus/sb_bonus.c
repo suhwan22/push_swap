@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   already_sort.c                                     :+:      :+:    :+:   */
+/*   sb_bonus.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhkim <suhkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 03:47:14 by suhkim            #+#    #+#             */
-/*   Updated: 2022/11/13 20:07:53 by suhkim           ###   ########.fr       */
+/*   Created: 2022/10/28 21:29:47 by suhkim            #+#    #+#             */
+/*   Updated: 2022/11/13 19:38:23 by suhkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "./checker_bonus.h"
 
-int	already_sort(int argc, char **argv)
+void	sb_bonus(t_info *info)
 {
-	int	i;
+	int	data;
 
-	i = 0;
-	while (++i < argc - 1)
-	{
-		if (!(ft_atoi(*(argv + i)) < ft_atoi(*(argv + i + 1))))
-			return (0);
-	}
-	return (1);
+	if (info->b_stack->size < 2)
+		return ;
+	data = info->b_stack->head.next->data;
+	info->b_stack->head.next->data = info->b_stack->head.next->next->data;
+	info->b_stack->head.next->next->data = data;
 }

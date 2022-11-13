@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_error.c                                      :+:      :+:    :+:   */
+/*   check_error_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhkim <suhkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 02:02:59 by suhkim            #+#    #+#             */
-/*   Updated: 2022/11/13 19:23:03 by suhkim           ###   ########.fr       */
+/*   Updated: 2022/11/13 20:35:35 by suhkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "./checker_bonus.h"
 
 static int	check_target_int(char *target)
 {
@@ -47,7 +47,7 @@ static int	check_dup(int argc, char **argv)
 	return (0);
 }
 
-int	check_error(int argc, char **argv)
+int	check_error_bonus(int argc, char **argv)
 {
 	int	len;
 	int	i;
@@ -60,7 +60,7 @@ int	check_error(int argc, char **argv)
 		{
 			if (i == 0 && (**(argv + len) == '+' || **(argv + len) == '-'))
 				i++;
-			if (!ft_isdigit(*(*(argv + len) + i)))
+			if (!ft_isdigit_bonus(*(*(argv + len) + i)))
 				return (1);
 			i++;
 		}

@@ -6,7 +6,7 @@
 #    By: suhkim <suhkim@student.4seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 0/09/30 0:33:0 by suhkim            #+#    #+#              #
-#    Updated: 2022/11/12 05:23:44 by suhkim           ###   ########.fr        #
+#    Updated: 2022/11/13 20:46:12 by suhkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,30 @@ SRC = exe_t_upper_n_lower.c \
 	  check_error.c \
 	  already_sort.c
 
-BONUS_SRC = $(SRC)
+
+BONUS_SRC = check_error_bonus.c \
+			pa_bonus.c \
+			put_error_bonus.c \
+			rrr_bonus.c \
+			checker.c \
+			pb_bonus.c \
+			ra_bonus.c \
+			sa_bonus.c \
+			checker_bonus.h	\
+			pop_back_bonus.c \
+			rb_bonus.c \
+			sb_bonus.c \
+			exe_str_op_bonus.c \
+			pop_front_bonus.c \
+			rr_bonus.c \
+			ss_bonus.c \
+			get_parameters_bonus.c \
+			push_back_bonus.c \
+			rra_bonus.c	\
+			valid_input_bonus.c \
+			init_info_bonus.c \
+			push_front_bonus.c \
+			rrb_bonus.c
 
 OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)

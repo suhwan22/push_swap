@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   already_sort.c                                     :+:      :+:    :+:   */
+/*   get_parameters_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhkim <suhkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 03:47:14 by suhkim            #+#    #+#             */
-/*   Updated: 2022/11/13 20:07:53 by suhkim           ###   ########.fr       */
+/*   Created: 2022/10/14 19:35:17 by suhkim            #+#    #+#             */
+/*   Updated: 2022/11/13 19:41:51 by suhkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "./checker_bonus.h"
+#include <string.h>
 
-int	already_sort(int argc, char **argv)
+int	get_parameters_bonus(t_stack *a_stack, char **param, int len)
 {
-	int	i;
+	int		i;
 
-	i = 0;
-	while (++i < argc - 1)
+	i = 1;
+	while (i < len)
 	{
-		if (!(ft_atoi(*(argv + i)) < ft_atoi(*(argv + i + 1))))
-			return (0);
+		push_back_bonus(a_stack, ft_atoi(*(param + i)));
+		i++;
 	}
 	return (1);
 }

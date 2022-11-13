@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   already_sort.c                                     :+:      :+:    :+:   */
+/*   pop_back_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhkim <suhkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 03:47:14 by suhkim            #+#    #+#             */
-/*   Updated: 2022/11/13 20:07:53 by suhkim           ###   ########.fr       */
+/*   Created: 2022/10/28 20:05:48 by suhkim            #+#    #+#             */
+/*   Updated: 2022/11/13 20:32:38 by suhkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "./checker_bonus.h"
 
-int	already_sort(int argc, char **argv)
+int	pop_back_bonus(t_stack *stack)
 {
-	int	i;
+	int		data;
+	t_node	*temp;
 
-	i = 0;
-	while (++i < argc - 1)
-	{
-		if (!(ft_atoi(*(argv + i)) < ft_atoi(*(argv + i + 1))))
-			return (0);
-	}
-	return (1);
+	if (!stack || !stack->size)
+		return (0);
+	temp = stack->tail.pre;
+	data = temp->data;
+	temp->pre->next = &stack->tail;
+	stack->tail.pre = temp->pre;
+	stack->size -= 1;
+	free(temp);
+	return (data);
 }

@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   already_sort.c                                     :+:      :+:    :+:   */
+/*   put_error_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhkim <suhkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 03:47:14 by suhkim            #+#    #+#             */
-/*   Updated: 2022/11/13 20:07:53 by suhkim           ###   ########.fr       */
+/*   Created: 2022/11/12 02:49:29 by suhkim            #+#    #+#             */
+/*   Updated: 2022/11/13 19:40:22 by suhkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "./checker_bonus.h"
 
-int	already_sort(int argc, char **argv)
+int	put_error_bonus(void)
 {
-	int	i;
-
-	i = 0;
-	while (++i < argc - 1)
-	{
-		if (!(ft_atoi(*(argv + i)) < ft_atoi(*(argv + i + 1))))
-			return (0);
-	}
-	return (1);
+	write(2, "Error\n", 6);
+	exit(1);
 }

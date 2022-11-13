@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   already_sort.c                                     :+:      :+:    :+:   */
+/*   ft_isdigit_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhkim <suhkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 03:47:14 by suhkim            #+#    #+#             */
-/*   Updated: 2022/11/13 20:07:53 by suhkim           ###   ########.fr       */
+/*   Created: 2022/03/07 18:19:24 by suhkim            #+#    #+#             */
+/*   Updated: 2022/11/13 20:31:44 by suhkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
-
-int	already_sort(int argc, char **argv)
+int	ft_isdigit_bonus(int c)
 {
-	int	i;
-
-	i = 0;
-	while (++i < argc - 1)
-	{
-		if (!(ft_atoi(*(argv + i)) < ft_atoi(*(argv + i + 1))))
-			return (0);
-	}
-	return (1);
+	return (c >= '0' && c <= '9');
 }

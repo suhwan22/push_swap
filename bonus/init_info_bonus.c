@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init_info_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhkim <suhkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 19:07:07 by suhkim            #+#    #+#             */
-/*   Updated: 2022/11/13 19:02:16 by suhkim           ###   ########.fr       */
+/*   Created: 2022/11/12 01:54:27 by suhkim            #+#    #+#             */
+/*   Updated: 2022/11/13 19:41:42 by suhkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "./checker_bonus.h"
 
-int	main(int argc, char **argv)
+static void	init_stack(t_stack *stack)
 {
-	t_info	info;
+	stack->head.next = &stack->tail;
+	stack->tail.pre = &stack->head;
+	stack->size = 0;
+}
 
-	if (argc == 1)
+int	init_info_bonus(t_info *info)
+{
+	info->a_stack = malloc(sizeof(t_stack));
+	if (!info->a_stack)
 		return (0);
-	if (check_error(argc, argv))
-		return (put_error());
-	if (already_sort(argc, argv))
+	info->b_stack = malloc(sizeof(t_stack));
+	if (!info->b_stack)
+	{
+		free(info->a_stack);
 		return (0);
-	if (!init_info(&info))
-		return (0);
-	get_parameters(info.a_stack, argv, argc);
-	if (argc == 2)
-		return (0);
-	if (argc == 3)
-		return (sort_two(&info));
-	if (argc == 4)
-		return (sort_three(&info));
-	divide(&info, argv, argc);
-	greedy_sort(&info);
-	return (0);
+	}
+	init_stack(info->a_stack);
+	init_stack(info->b_stack);
+	return (1);
 }

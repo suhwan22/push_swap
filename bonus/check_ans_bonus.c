@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   already_sort.c                                     :+:      :+:    :+:   */
+/*   check_ans_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhkim <suhkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 03:47:14 by suhkim            #+#    #+#             */
-/*   Updated: 2022/11/13 20:07:53 by suhkim           ###   ########.fr       */
+/*   Created: 2022/11/13 20:01:41 by suhkim            #+#    #+#             */
+/*   Updated: 2022/11/13 20:42:56 by suhkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "./checker_bonus.h"
 
-int	already_sort(int argc, char **argv)
+#include <stdio.h>
+
+int	check_ans_bonus(t_info *info)
 {
-	int	i;
+	t_node	*temp;
 
-	i = 0;
-	while (++i < argc - 1)
+	temp = info->a_stack->head.next;
+	while (temp->next != &info->a_stack->tail)
 	{
-		if (!(ft_atoi(*(argv + i)) < ft_atoi(*(argv + i + 1))))
+		if (!(temp->data < temp->next->data))
 			return (0);
+		temp = temp->next;
 	}
 	return (1);
 }

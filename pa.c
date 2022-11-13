@@ -6,7 +6,7 @@
 /*   By: suhkim <suhkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 21:31:47 by suhkim            #+#    #+#             */
-/*   Updated: 2022/11/10 21:31:30 by suhkim           ###   ########.fr       */
+/*   Updated: 2022/11/13 21:38:21 by suhkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	pa(t_info *info, char *str)
 {
 	int	data;
 
-	if (!info->b_stack->head.next)
+	if (!info->b_stack->size)
 		return ;
 	if (!ft_strncmp(str, "pa", 2))
 		ft_printf("pa\n");

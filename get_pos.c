@@ -6,15 +6,11 @@
 /*   By: suhkim <suhkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:50:45 by suhkim            #+#    #+#             */
-/*   Updated: 2022/11/11 21:45:15 by suhkim           ###   ########.fr       */
+/*   Updated: 2022/11/13 21:36:57 by suhkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
-/*
-int	get_min_n(t_info *info, int	target, int min_index, int min)
-{}
-*/
 
 int	get_pos(t_info *info, int target_index)
 {

@@ -6,7 +6,7 @@
 #    By: suhkim <suhkim@student.4seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 0/09/30 0:33:0 by suhkim            #+#    #+#              #
-#    Updated: 2022/11/13 20:46:12 by suhkim           ###   ########.fr        #
+#    Updated: 2022/11/13 21:02:47 by suhkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,18 +53,19 @@ SRC = exe_t_upper_n_lower.c \
 	  sort_three.c \
 	  greedy_sort.c \
 	  check_error.c \
-	  already_sort.c
+	  already_sort.c \
 
 
 BONUS_SRC = check_error_bonus.c \
+			check_ans_bonus.c \
 			pa_bonus.c \
+	  		ft_isdigit_bonus.c \
 			put_error_bonus.c \
 			rrr_bonus.c \
 			checker.c \
 			pb_bonus.c \
 			ra_bonus.c \
 			sa_bonus.c \
-			checker_bonus.h	\
 			pop_back_bonus.c \
 			rb_bonus.c \
 			sb_bonus.c \
@@ -102,6 +103,7 @@ $(BONUS_NAME): $(BONUS_OBJ)
 
 clean:
 	@$(RM) $(OBJ)
+	@$(RM) $(BONUS_OBJ)
 	@make -C ./libft clean
 	@make -C ./libgnl clean
 
@@ -112,4 +114,4 @@ fclean: clean
 
 re:	fclean all
 
-.PHONY:all clean fclean re
+.PHONY:all clean fclean re bonus

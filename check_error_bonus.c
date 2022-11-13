@@ -6,7 +6,7 @@
 /*   By: suhkim <suhkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 02:02:59 by suhkim            #+#    #+#             */
-/*   Updated: 2022/11/13 20:35:35 by suhkim           ###   ########.fr       */
+/*   Updated: 2022/11/13 21:05:42 by suhkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	check_target_int(char *target)
 
 	if (!target || !(*target))
 		return (0);
-	temp = ft_strtol(target);
+	temp = ft_strtol_bonus(target);
 	if (temp < -2147483648 || temp > 2147483647)
 		return (0);
 	else
@@ -38,7 +38,7 @@ static int	check_dup(int argc, char **argv)
 		j = i + 1;
 		while (j < argc)
 		{
-			if (!ft_strncmp(*(argv + i), *(argv + j), 11))
+			if (!ft_strncmp_bonus(*(argv + i), *(argv + j), 11))
 				return (1);
 			j++;
 		}

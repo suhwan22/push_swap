@@ -6,13 +6,13 @@
 /*   By: suhkim <suhkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 01:54:27 by suhkim            #+#    #+#             */
-/*   Updated: 2022/11/13 19:41:42 by suhkim           ###   ########.fr       */
+/*   Updated: 2022/11/13 21:05:42 by suhkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./checker_bonus.h"
 
-static void	init_stack(t_stack *stack)
+static void	init_stack_bonus(t_stack *stack)
 {
 	stack->head.next = &stack->tail;
 	stack->tail.pre = &stack->head;
@@ -30,7 +30,7 @@ int	init_info_bonus(t_info *info)
 		free(info->a_stack);
 		return (0);
 	}
-	init_stack(info->a_stack);
-	init_stack(info->b_stack);
+	init_stack_bonus(info->a_stack);
+	init_stack_bonus(info->b_stack);
 	return (1);
 }

@@ -6,14 +6,14 @@
 /*   By: suhkim <suhkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 18:36:20 by suhkim            #+#    #+#             */
-/*   Updated: 2022/11/13 20:34:25 by suhkim           ###   ########.fr       */
+/*   Updated: 2022/11/13 20:48:15 by suhkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_BONUS_H
 # define CHECKER_BONUS_H
 
-# include "../libgnl/get_next_line_bonus.h"
+# include "./libgnl/get_next_line_bonus.h"
 # include <stdlib.h>
 # include <unistd.h>
 

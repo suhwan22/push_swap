@@ -6,7 +6,7 @@
 /*   By: suhkim <suhkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:07:07 by suhkim            #+#    #+#             */
-/*   Updated: 2022/11/12 04:21:16 by suhkim           ###   ########.fr       */
+/*   Updated: 2022/11/13 17:28:04 by suhkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 	if (already_sort(argc, argv))
 		return (0);
 	if (!init_info(&info))
-		return (-1);
+		return (0);
 	get_parameters(info.a_stack, argv, argc);
 	if (argc == 2)
 		return (0);

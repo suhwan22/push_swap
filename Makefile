@@ -6,13 +6,16 @@
 #    By: suhkim <suhkim@student.4seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 0/09/30 0:33:0 by suhkim            #+#    #+#              #
-#    Updated: 2022/11/12 04:56:38 by suhkim           ###   ########.fr        #
+#    Updated: 2022/11/12 05:23:44 by suhkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+BONUS_NAME = checker
+
 CC = cc
 CFLAGS = -Werror -Wall -Wextra
+
 SRC = exe_t_upper_n_lower.c \
 	  exe_t_upper_n_upper.c \
 	  exe_t_lower_n_lower.c \
@@ -52,25 +55,37 @@ SRC = exe_t_upper_n_lower.c \
 	  check_error.c \
 	  already_sort.c
 
+BONUS_SRC = $(SRC)
+
 OBJ = $(SRC:.c=.o)
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
 RM = rm -f
 
 all: $(NAME)
+
+bonus: $(BONUS_NAME)
 
 $(NAME): $(OBJ)
 	@make -C ./libft
 	$(CC) $(CFLAGS) -o $@ $^ -L./libft -lft
 
+$(BONUS_NAME): $(BONUS_OBJ)
+	@make -C ./libft
+	@make -C ./libgnl
+	$(CC) $(CFLAGS) -o $@ $^ -L./libft -lft -L./libgnl -lgnl
+
 .c.o: $(SRC)
 	$(CC) $(CFLAGS) -c $^
 
 clean:
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ)
 	@make -C ./libft clean
+	@make -C ./libgnl clean
 
 fclean: clean
 	@make -C ./libft fclean
-	$(RM) $(NAME) $(LIBFT)
+	@make -C ./libgnl fclean
+	@$(RM) $(NAME) $(BONUS_NAME)
 
 re:	fclean all
 

@@ -6,7 +6,7 @@
 #    By: suhkim <suhkim@student.4seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 0/09/30 0:33:0 by suhkim            #+#    #+#              #
-#    Updated: 2022/11/13 21:02:47 by suhkim           ###   ########.fr        #
+#    Updated: 2022/11/13 21:25:19 by suhkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ BONUS_SRC = check_error_bonus.c \
 	  		ft_isdigit_bonus.c \
 			put_error_bonus.c \
 			rrr_bonus.c \
-			checker.c \
+			checker_bonus.c \
 			pb_bonus.c \
 			ra_bonus.c \
 			sa_bonus.c \
